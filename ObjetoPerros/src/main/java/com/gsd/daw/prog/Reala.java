@@ -20,7 +20,7 @@ public class Reala {
 			}
 		}
 		else
-		System.out.println("No se ha añaidio");
+		System.err.println("No se ha añaidio");
 	}
 	
 	public void mostrarPerros() {
