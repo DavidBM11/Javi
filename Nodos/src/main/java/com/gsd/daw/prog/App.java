@@ -13,9 +13,15 @@ public class App {
 	 *            no se espera ningún parámetro.
 	 */
 	public static void main(String[] args) {
-		Nodo n = new Nodo(1);
+		
 		ListaEnteros ln = new ListaEnteros();
 		
 		ln.add(1);
+		ln.add(8);
+		ln.add(4);
+		
+		System.out.println(ln.get(1)); 
+		
+	
 	}
 }
