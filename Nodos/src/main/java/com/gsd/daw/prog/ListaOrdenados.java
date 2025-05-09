@@ -1,28 +1,43 @@
 package com.gsd.daw.prog;
 
-public class ListaEnteros {
-
+public class ListaOrdenados {
+	
 	private Nodo c;
 
-	public ListaEnteros() {
+	public ListaOrdenados() {
 		this.c=null;
 	}
 	
-
-	
 	public void add(int n) {
-		Nodo aux = new Nodo(n);
+		Nodo aux2 = new Nodo(n);
 		if(c==null) {
-			c=aux;
+			c=aux2;
 		}
 		else {
-			Nodo aux2=c;
-			while(aux2.getNext()!=null) {
-				aux2 = aux2.getNext();
+			Nodo aux=c;
+			while(aux.getNext()!=null) {
+				aux = aux.getNext();
 			}
-			aux2.setNext(aux);
+			aux.setNext(aux2);
 		}
-		
+		if(c==null || c.getNext()==null) {
+			return;
+		}
+		boolean ord = false;
+		while(!ord) {
+			ord= true;
+			Nodo aux=c;
+			while(aux.getNext()!=null) {
+				if(aux.getDato()>aux.getNext().getDato()) {
+					int act=aux.getDato();
+					aux.setDato(aux.getNext().getDato());
+					aux.getNext().setDato(act);;
+					ord=false;
+				}
+				aux=aux.getNext();
+			}
+			
+		}
 	}
 	
 	public int get(int n) {
@@ -35,7 +50,7 @@ public class ListaEnteros {
 			aux=aux.getNext();
 			cont++;
 		}
-		throw new IndexOutOfBoundsException("No existe");
+		throw new IllegalArgumentException("No existe");
 	}
 	
 	public void remove(int n) {
@@ -57,20 +72,19 @@ public class ListaEnteros {
 			aux=aux.getNext();
 			cont++;
 		}
-		throw new IndexOutOfBoundsException("No existe");
+		throw new IllegalArgumentException("No existe");
 	
 	}
 	
 	public int size() {
 		Nodo aux = c;
-		int cont =1;
+		int cont=1;
 		while(aux.getNext()!=null) {
 			aux=aux.getNext();
 			cont++;
 		}
 		return cont;
 	}
-	
 	
 	public void print() {
 		Nodo aux = c;
@@ -79,41 +93,12 @@ public class ListaEnteros {
 			aux=aux.getNext();
 			
 		}
-		
 	}
 	
-	public void sort() {
-		if(c==null || c.getNext()==null) {
-			return;
-		}
-		boolean ord = false;
-		while(!ord) {
-			ord= true;
-			Nodo aux = c;
-			while(aux.getNext()!=null) {
-				if(aux.getDato()>aux.getNext().getDato()) {
-					int act=aux.getDato();
-					aux.setDato(aux.getNext().getDato());
-					aux.getNext().setDato(act);;
-					ord=false;
-				}
-				aux=aux.getNext();
-			}
-			
-		}
-	}
-	
-	public boolean esVacia() {
+	public boolean isEmpty() {
 		if(c!=null) {
 			return false;
 		}
 		return true;
 	}
-	
-	
-	
-	
 }
-	
-	
-

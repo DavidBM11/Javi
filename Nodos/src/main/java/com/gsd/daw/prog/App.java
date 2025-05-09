@@ -15,12 +15,29 @@ public class App {
 	public static void main(String[] args) {
 		
 		ListaEnteros ln = new ListaEnteros();
+		ListaOrdenados lo = new ListaOrdenados();
 		
-		ln.add(1);
-		ln.add(8);
-		ln.add(4);
 		
-		System.out.println(ln.get(1)); 
+		lo.add(1);
+		lo.add(2);
+		lo.add(3);
+		lo.add(4);
+		lo.add(5);
+		lo.add(6);
+		
+		
+		//System.out.println(lo.size()); 
+		lo.print();
+		
+		//System.out.println(lo.get(2)); 
+		
+		//System.out.println(ln.get(1));
+		//ln.remove(0);
+		//System.out.println(ln.size()); 
+		//ln.print();
+		//ln.sort();
+		//ln.print();
+		//System.out.println(ln.esVacia()); 
 		
 	
 	}
