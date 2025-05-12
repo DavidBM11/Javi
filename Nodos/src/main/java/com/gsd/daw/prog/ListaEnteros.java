@@ -35,7 +35,7 @@ public class ListaEnteros {
 			aux=aux.getNext();
 			cont++;
 		}
-		throw new IndexOutOfBoundsException("No existe");
+		throw new IllegalArgumentException("No existe");
 	}
 	
 	public void remove(int n) {
@@ -57,7 +57,7 @@ public class ListaEnteros {
 			aux=aux.getNext();
 			cont++;
 		}
-		throw new IndexOutOfBoundsException("No existe");
+		throw new IllegalArgumentException("No existe");
 	
 	}
 	
