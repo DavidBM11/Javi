@@ -15,9 +15,11 @@ public class ColaStrings {
 			c=aux;
 		}
 		else {
-		Nodo aux2 = c;
-		c=aux;
-		aux.setNext(aux2);
+			Nodo aux2=c;
+			while(aux2.getNext()!=null) {
+				aux2 = aux2.getNext();
+			}
+			aux2.setNext(aux);
 		}
 		
 	}
