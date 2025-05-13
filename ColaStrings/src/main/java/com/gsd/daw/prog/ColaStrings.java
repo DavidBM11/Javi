@@ -25,9 +25,10 @@ public class ColaStrings {
 	}
 	
 	public String dequeue() {
-		Nodo aux=c;
-		if(aux!=null) {
-			return aux.getDato();
+		if(c!=null) {
+			String dato= c.getDato();
+			c=c.getNext();
+			return dato;
 		}
 		throw new IllegalArgumentException("Cola Vacia");
 	}
