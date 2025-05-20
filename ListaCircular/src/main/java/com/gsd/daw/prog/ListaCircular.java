@@ -116,26 +116,28 @@ public class ListaCircular {
 	}
 	
 	
-//	public void sort() {
-//		if(c==null || c.getNext()==null) {
-//			return;
-//		}
-//		boolean ord = false;
-//		while(!ord) {
-//			ord= true;
-//			Nodo aux = c;
-//			while(aux.getNext()!=null) {
-//				if(aux.getDato()>aux.getNext().getDato()) {
-//					String act=aux.getDato();
-//					aux.setDato(aux.getNext().getDato());
-//					aux.getNext().setDato(act);;
-//					ord=false;
-//				}
-//				aux=aux.getNext();
-//			}
-//			
-//		}
-//	}
+public void sort() {
+	
+		if(c==null || c.getNext()==c) {
+			return;
+		}
+		boolean ord = false;
+		while(ord) {
+			ord= false;
+			Nodo aux = c;
+			while(aux.getNext()!=c) {
+				Nodo next = aux.getNext();
+				if(next != c && aux.getDato().compareTo(next.getDato())>0) {
+					String tmp = aux.getDato();
+					aux.setDato(next.getDato());
+					next.setDato(tmp);
+					ord = true;
+				}
+				aux = aux.getNext();
+			}
+			
+		}
+}
 	
 	public boolean isEmpty() {
 		if(c!=null) {
